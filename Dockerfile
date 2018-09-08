@@ -14,7 +14,8 @@ RUN apt install python-dev python-pip -y --no-install-recommends
 
 
 # Download, Build and Install libspotify
-RUN wget https://developer.spotify.com/download/libspotify/libspotify-12.1.51-Linux-x86_64-release.tar.gz && tar xvf libspotify-12.1.51-Linux-x86_64-release.tar.gz
+ADD https://developer.spotify.com/download/libspotify/libspotify-12.1.51-Linux-x86_64-release.tar.gz libspotify-12.1.51-Linux-x86_64-release.tar.gz
+RUN tar xvf libspotify-12.1.51-Linux-x86_64-release.tar.gz
 RUN cd libspotify-12.1.51-Linux-x86_64-release/ && make install prefix=/usr/local
 
 
